@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+*::selection{
+  background-color: #FAFBB3;
+  color: #04420B;
+}
+
 body{
   font-family: 'Poppins', sans-serif;
   background-color: #F9F7F7;
@@ -41,6 +46,12 @@ body{
   padding: 1rem;
 }
 
+.main-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .amount-section, .currency-section{
   gap: 2rem;
   background-color: #04420B;
@@ -49,12 +60,12 @@ body{
   color: #FAFBB3;
 }
 
-.amount-input-container{ gap: 0.5rem; }
+.amount-input-container, .currency-select-container{ gap: 0.5rem; }
 
-.amount-input-container label{ letter-spacing: 2px; }
+label{ letter-spacing: 2px; }
 
-.amount-input{
-  background-color: #FAFBB3;
+.amount-input, .currency-select{
+  background-color: #F9F7F7;
   height: 1.8rem;
   font-size: 1rem;
   border: 1px solid #8CD454;
@@ -68,15 +79,37 @@ body{
 .show-amount-container, .show-currency-container{ gap: 5px; }
 
 .show-amount-container h2, .show-currency-container h2{
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 2px;
+}
+
+option{ font-weight: 600; }
+
+.convert-button{
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #FAFBB3;
+  color: #04420B;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: 2px solid #04420B;
+  cursor: pointer;
+}
+
+.convert-button:hover{
+  transition: .4s ease-in-out;
+  background-color: #8CD454;
+  border: 2px solid #04420B;
 }
 
 .graphic-section{
   gap: 1rem;
   color: #04420B;
-  padding: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid #04420B;
+  margin: 1rem;
 }
 
 footer{
@@ -90,11 +123,30 @@ footer{
   text-align: center;
 }
 
-.footer-description{
-  gap: 0.5rem;
-}
+.footer-description{ gap: 0.5rem; }
 
-.footer-description p{
-  color: #F9F7F7;
-}
+.footer-description p{ color: #F9F7F7; }
 
+@media (min-width: 1024px){
+  main{
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+  .main-container{
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .amount-section, .currency-section {
+    width: 100%;
+  }
+
+  .convert-button{
+    width: 20%;
+    font-size: 1.5rem;
+  }
+
+  .show-amount-container h2, .show-currency-container h2{
+    font-size: 2.5rem;
+  }
+}
