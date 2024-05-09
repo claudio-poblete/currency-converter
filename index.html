@@ -16,7 +16,7 @@
         <div id="amount-section" class="amount-section flex-column">
           <div class="amount-input-container flex-column" id="amount-input-container">
             <label for="amount">Ingresa un monto</label>
-            <input type="number" id="amount-input" class="amount-input" name="amount" value="0"  oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength = "10">
+            <input type="number" id="amount-input" class="amount-input" name="amount" placeholder="CLP">
           </div>
           <div id="show-amount-container" class="show-amount-container flex-row">
             <h2>$</h2>
@@ -27,13 +27,11 @@
           <div class="currency-select-container flex-column">
             <label for="currency">Selecciona una moneda</label>
             <select name="currency" id="currency" class="currency-select">
-              <option value="Dolar">Dolar</option>
-              <option value="Bitcoin">Bitcoin</option>
             </select>
           </div>
           <div id="show-currency-container" class="show-currency-container flex-row">
-            <h2>$</h2>
-            <h2>0</h2>
+            <h2 id="currency-symbol">$</h2>
+            <h2 id="show-currency" class="show-currency">0</h2>
           </div>
         </div>
       </div>
@@ -57,8 +55,10 @@
     </div>
   </footer>
 
-
-
-  <script src="assets/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="assets/js/api.js"></script>
+  <script type="module" src="assets/js/conversion.js"></script>
+  <script type="module" src="assets/js/ui.js"></script>
+  <script type="module" src="assets/js/index.js"></script>
 </body>
 </html>
