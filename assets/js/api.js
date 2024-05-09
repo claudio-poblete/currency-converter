@@ -6,8 +6,7 @@ const fetchData = async (endpoint) =>{
     if(!response.ok){
       throw new Error('Error al obtener los datos')
     }
-    const data = await response.json()
-    return data
+    return await response.json()
   }catch(error){
     throw new Error('Error al realizar la solicitud a la API')
   }
